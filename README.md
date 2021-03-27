@@ -25,7 +25,7 @@ Due to the complexity of this data, a large part of this project was cleaning an
 * Weather conditions: wind speed, storm speed, storm direction
 * Times of occurence: year, week of year
 
-The modeling section of this project runs and evaluates four different classification modeling types, with attention paid to how they parform against the class imbalance and the nonlinear features. 
+Several model types were run to determine the best methodology, with the primary scoring method of recall in order to reduce false negatives i.e. instances where a severe storm is misclassified. The model was also evaluated on accuracy & precision. 
 
 ![y_dist.png](./Images/y_dist.png)
 
@@ -33,7 +33,7 @@ The modeling section of this project runs and evaluates four different classific
 
 ## Results
 
-Based on the model evaluations which are detailed in the notebook, thie final model chosen to move forward with is 
+Based on the model evaluations which are detailed in the notebook, thie final model chosen to move forward with is a decision tree. The strenghts of this model...
 
 ### Business Results and Recommendation
 
@@ -56,7 +56,8 @@ Based on this, recommendations for the housing developers are
 
 ### Technical Recommendation/Future Work
 
-If there is further work on this project, I would recommend continuing to engineer features of the model in order to improve the R2 score and decrease error. Although I didn't detect any interactions, I would recommend looking more into how the features interact and relate to each other.
+If there is further work on this project, I would recommend continuing to tune the decision tree with the main goal of increasing the accuracy of predictions against true negatives, which is where most of the error is coming from. 
+
 To make the model more generalizable, it would also be interesting to include data from multiple markets to see what trends are local vs specific to this market and potentially build multiple models to show the differences.
 
 ## Conclusions
@@ -65,16 +66,18 @@ While the data cleaning and transformations I made to this data followed best pr
 
 ## For More Information
 
-See the full analysis in the [Jupyter Notebook](./Housing%20Data%20Model%20&%20Analysis.ipynb) or review this [presentation](./Housing%20Data%20Analysis%20Presentation.pdf).
+Please reference the [Jupyter Notebook](./Data%20Classification_Predicting%20Tropical%20Storms.ipynb) or review 
+
+this [presentation](./Housing%20Data%20Analysis%20Presentation.pdf).
 
 ## Repository Structure
 
 ```
-├── Archive
-├── Images
-├── data
-├── Housing Data Model & Analysis.ipynb
-├── Housing Data Analysis Presentation.pdf
+├── images
+├── Data Classification_Predicting Tropical Storms.ipynb
+├── Data Visualizations.ipynb
+├── IBTrACS_version4_Technical_Details.pdf
+├── .....pdf
 ├── README.md
 
 ```
