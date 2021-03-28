@@ -10,7 +10,7 @@ The goal of this project is to build a model that takes in tropical cyclone trac
 
 The data for this project is from the National Oceanic and Atmospheric Administration's International Best Track Archive for Climate Stewardship (IBTrACS) project. The goal of this project is make available tropical cyclone best track data to aid understanding of the distribution, frequency, and intensity of tropical cyclones worldwide.
 
-Because the idea is to have a global data source, this data is pulled from many separate agenices worldwide, and therefore has many columns that are duplicative, inconsistent, or difficult to interpret. When doing this analysis, reference was made to the data documentation saved in this repository. 
+Because IBTrACS is a global source, this data is pulled from many separate agenices worldwide, and therefore has many columns that are duplicative, inconsistent, or difficult to interpret. When doing this analysis, reference was made to the data documentation saved in this repository. The [Data Visualizations](./Data%20Visualizations.ipynb) notebook includes different ways of examining the features, as well as a function to map out the specific storms in the data set. 
 
 [Source](https://www.ncdc.noaa.gov/ibtracs/index.php)
 
@@ -18,57 +18,40 @@ Because the idea is to have a global data source, this data is pulled from many 
 
 The resulting model will be used by meterologists to understand whether an incoming storm is a major threat to a certain area, and therefore inform news agenices, local governments, and the public to prepare accordingly.
 
+![storm_map.jpg](./images/storm_map.jpg)
+
 ## Methodology
 
-Due to the complexity of this data, a large part of this project was cleaning and exploring the data with reference to its documentation, located in this repository. Before modeling, relevant features were selected including:
+Due to the complexity of this data set, a large part of this project was cleaning and exploring the data with reference to its documentation, located in this repository. Before modeling, relevant features were selected including:
 * Location-based indicators: latitude, longitude, basin, distance to land
 * Weather conditions: wind speed, storm speed, storm direction
 * Times of occurence: year, week of year
 
-Several model types were run to determine the best methodology, with the primary scoring method of recall in order to reduce false negatives i.e. instances where a severe storm is misclassified. The model was also evaluated on accuracy & precision. 
-
-![y_dist.png](./Images/y_dist.png)
-
-
+Several model types were run to determine the best methodology, with the primary scoring method of recall in order to reduce false negatives i.e. instances where a severe storm is misclassified as a non-threat. The model was also evaluated on accuracy & precision. 
 
 ## Results
 
-Based on the model evaluations which are detailed in the notebook, thie final model chosen to move forward with is a decision tree. The strenghts of this model...
+Based on the model evaluations which are detailed in the notebook, the final model chosen to move forward with is a decision tree. The strenghts of this model include its high recall score as compared to others. It also can perfectly predict true positives. 
 
-### Business Results and Recommendation
+Areas where the model could be improved include overall accuracy, and precision in predicting true negatives, which is where most of the error comes from. The confusion matrix below shows this. 
 
-The final model analysis describes the following. 
+![confusion_matrix.png](./images/confusion_matrix.png)
 
-Features that drive value in homes for our target buyer are:
-* Size of the home interior
-* Number of bathrooms (more so than bedrooms)
-* High construction quality and materials
+### Business Objective Results 
 
-The value is significantly decreased where:
- * Construction quality is average or low
-* House is further away from the city center
+The project achieved the goal of creating a model with an emphasis on a high recall score, which can be used to classify tropical storms. However, overall accuracy of the model should be improved.
 
-Based on this, recommendations for the housing developers are
+### Conclusions & Future Work
 
-* Focus on maximizing the living area of the house over the yard size, or adding a basement
-* Use high quality construction methods 
-* Build multi-floor homes and include ample bathrooms to reflect what buyers are looking for
+The decision tree can be further tuned to reduce error. It is also recommended to revisit the feature selection to potentially remove more of the less trustworthy features to get better predictions.
 
-### Technical Recommendation/Future Work
+This data set itself presented several challenges. For future work it is recommended to work closer with or take further time to examine/understand NOAA data and their methodology in order to improve data that is piped into this model. This may include examining the different sources of the data as well as the data gathering process.
 
-If there is further work on this project, I would recommend continuing to tune the decision tree with the main goal of increasing the accuracy of predictions against true negatives, which is where most of the error is coming from. 
-
-To make the model more generalizable, it would also be interesting to include data from multiple markets to see what trends are local vs specific to this market and potentially build multiple models to show the differences.
-
-## Conclusions
-
-While the data cleaning and transformations I made to this data followed best practices to fit it to a linear regression model, it didn't end up as accurate as I would have hoped. However, I was able to inform my business question by defining features of a home that would be important to a certain segment of buyers and eliminating many that do not prove to affect price.
+Lastly, while this project analyzed individual readings in the data, it is recommended to analyze data grouped by storm if more instances of the 0 class are able to be added to the data set to take a more holistic look at storm patterns.
 
 ## For More Information
 
-Please reference the [Jupyter Notebook](./Data%20Classification_Predicting%20Tropical%20Storms.ipynb) or review 
-
-this [presentation](./Housing%20Data%20Analysis%20Presentation.pdf).
+Please reference the [Jupyter Notebook](./Data%20Classification_Predicting%20Tropical%20Storms.ipynb) or review this [presentation](./Data%20Classification%20APresentation.pdf).
 
 ## Repository Structure
 
@@ -77,7 +60,7 @@ this [presentation](./Housing%20Data%20Analysis%20Presentation.pdf).
 ├── Data Classification_Predicting Tropical Storms.ipynb
 ├── Data Visualizations.ipynb
 ├── IBTrACS_version4_Technical_Details.pdf
-├── .....pdf
+├── Data Classification Presentation.pdf
 ├── README.md
 
 ```
