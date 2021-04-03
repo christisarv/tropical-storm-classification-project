@@ -31,19 +31,19 @@ Several model types were run to determine the best methodology, with the primary
 
 ## Results
 
-Based on the model evaluations which are detailed in the notebook, the final model chosen to move forward with is a decision tree. The strenghts of this model include its high recall score as compared to others. It also can perfectly predict true positives. 
+Based on the model evaluations which are detailed in the notebook, the final model chosen to move forward with is a boosted method using Adaboost. The strenghts of this model include its high recall score as compared to others and overall high accuracy.
 
-Areas where the model could be improved include overall accuracy, and precision in predicting true negatives, which is where most of the error comes from. The confusion matrix below shows this. 
+Areas where the model could be improved include reducing overall error as shown in the confusion matrix below.
 
 ![confusion_matrix.png](./images/confusion_matrix.png)
 
 ### Business Objective Results 
 
-The project achieved the goal of creating a model with an emphasis on a high recall score, which can be used to classify tropical storms. However, overall accuracy of the model should be improved.
+The project achieved the goal of creating a highly accurate model with an emphasis on a high recall score, which can be used to classify tropical storms. Due to the challenges with the data, there are future improvements that can be made if more resources are alloted to this project. 
 
 ### Conclusions & Future Work
 
-The decision tree can be further tuned to reduce error. It is also recommended to revisit the feature selection to potentially remove more of the less trustworthy features to get better predictions.
+The Adaboost model can be further tuned to reduce error, and other boosting methods can be exploredto see how they compare. It is also recommended to revisit the feature selection to potentially remove more of the less trustworthy features to get better predictions.
 
 This data set itself presented several challenges. For future work it is recommended to work closer with or take further time to examine/understand NOAA data and their methodology in order to improve data that is piped into this model. This may include examining the different sources of the data as well as the data gathering process.
 
