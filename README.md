@@ -51,7 +51,7 @@ Lastly, while this project analyzed individual readings in the data, it is recom
 
 ## For More Information
 
-Please reference the [Jupyter Notebook](./Data%20Classification_Predicting%20Tropical%20Storms.ipynb) or review this [presentation](./Data%20Classification%20APresentation.pdf).
+Please reference the [Jupyter Notebook](./Data%20Classification_Predicting%20Tropical%20Storms.ipynb) or review this [presentation](./Data%20Classification%20Presentation.pdf).
 
 ## Repository Structure
 
